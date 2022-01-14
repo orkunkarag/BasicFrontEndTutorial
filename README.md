@@ -161,17 +161,17 @@ Back in your local text editor in `index.html`, add the following code to your h
 1. Import the Ethersjs source into your `index.html` page inside a new set of script tags:
 
 ```html
-<script charset="utf-8"
-        src="https://cdn.ethers.io/scripts/ethers-v4.min.js"
-        type="text/javascript">
- </script>
+<script
+  charset="utf-8"
+  src="https://cdn.ethers.io/scripts/ethers-v4.min.js"
+  type="text/javascript"
+></script>
 
 <script>
   ////////////////////
   //ADD YOUR CODE HERE
   ////////////////////
 </script>
-
 ```
 
 2. Inside a new script tag, ensure ethereum is enabled:
@@ -198,7 +198,7 @@ var provider = new ethers.providers.Web3Provider(
   var signer
 ```
 
-For the contract ABI, we want to specifically navigate to the [JSON Section](https://docs.soliditylang.org/en/develop/abi-spec.html#json). 
+For the contract ABI, we want to specifically navigate to the [JSON Section](https://docs.soliditylang.org/en/develop/abi-spec.html#json).
 We need to describe our smart contract in JSON format.
 
 Since we have two methods, this should start as an array, with 2 objects:
@@ -210,6 +210,7 @@ var MoodContractABI = [{}, {}]
 From the above page, each object should have the following fields: `constant`, `inputs`, `name`, `outputs`, `payable`, `stateMutability` and `type`.
 
 For `setMood`, we describe each field below:
+
 - name: `setMood`, self explanatory
 - type: `function`, self explanatory
 - constant: should be `false` because this is a function that updates data
@@ -218,8 +219,8 @@ For `setMood`, we describe each field below:
 - payable: 'false` since this does not accept Ether
 - inputs: this is an array of inputs to the function. Each object in the array should have `internalType`, `name` and `type`, and these are `string`, `_mood` and `string` respectively
 
-
 For `getMood`, we describe each field below:
+
 - name: `getMood`, self explanatory
 - type: `function`, self explanatory
 - constant: should be `true` because this is a function that retrieves data. Even though this is a function, it is basically a getter
@@ -336,4 +337,4 @@ lite-server
 
 - The ABI is also in [this file](https://github.com/BlockDevsUnited/BasicFrontEndTutorial/blob/master/Mood_ABI.json)
 
-#### This illustrates an important point: you can also build a dApp _without needing to write the Ethereum contract yourself_! If you want to use an existing contract written and already on Ethereum!
+#### This illustrates an important point: you can also build a dApp _without needing to write the Ethereum contract yourself_! If you want to use an existing contract written and already on Ethereum!!
